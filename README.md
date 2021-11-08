@@ -13,14 +13,12 @@ correct array number and the second to actually run your job
 A script corresponding to the qarray_template.sh format.
 
 This will have:
-A section starting with the line ##JOB_NUM##
-This section needs to end with 'echo $ARRAY_NUM';
+1. A section starting with the line ##JOB_NUM##. This section needs to end with 'echo $ARRAY_NUM';
 You can script whatever process you want to generate this array.
-A second section starting with '##ARRAY_BIT##'
-This you should write and should behave exactly as a normal array job...
-...except where you'd normally have a line '#$ -t 1-10' or whatever, you
+2. A second section starting with '##ARRAY_BIT##'. This you should write and should behave exactly as a normal array job...except where you'd normally have a line '#$ -t 1-10' or whatever, you
 need to put '#$ -t ?'. This will get replaced with 1-$ARRAY_NUM from the
 first bit of your script. 
+
 If your script doesn't correspond to these requirements, an error message
 should hopefully be generated
 
