@@ -1,13 +1,9 @@
 ##JOB_NUM##
 
-#Examples...
+#For example...
 
-#my_file="/path/to/my/file";
-#ARRAY_NUM=$(cat $my_file | wc -l);
-
-ARRAY_NUM=5;
-
-#etc. etc.
+my_file="/path/to/my/file";
+ARRAY_NUM=$(cat $my_file | wc -l);
 
 echo $ARRAY_NUM;
 
