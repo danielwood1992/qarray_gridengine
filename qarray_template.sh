@@ -19,5 +19,6 @@ echo $ARRAY_NUM;
 #$ -l h_rt=1:0:0
 #$ -l h_vmem=5G
 #$ -t ?
+#$ -tc 50
 
 echo ${SGE_TASK_ID};
