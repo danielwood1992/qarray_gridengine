@@ -8,6 +8,14 @@ can then write as a regular old array job.
 This stops you having to have two separate scripts, one to generate the 
 correct array number and the second to actually run your job
 
+For example, you might have a list of files you want to do something to. Normally
+you'd have to manually do wc -l $file_list and change the value of N in  #$ -t N
+to that number. If the number is changing all the time (e.g. if your $file_list is 
+changing in size all the time as new tasks are added to it), or if you have a complex
+method of determining how many tasks to run (e.g. if it's things in file A and not file B
+and file A and B are changing all the time) or if you're just too lazy to change
+the number by hand, this might be the script for you.
+
 **Usage**
 
 qarray.sh your_script.sh
