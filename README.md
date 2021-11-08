@@ -8,7 +8,7 @@ can then write as a regular old array job.
 This stops you having to have two separate scripts, one to generate the 
 correct array number and the second to actually run your job
 
-**Usage
+**Usage**
 
 qarray.sh your_script.sh
 
