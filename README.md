@@ -8,6 +8,10 @@ can then write as a regular old array job.
 This stops you having to have two separate scripts, one to generate the 
 correct array number and the second to actually run your job
 
+**Usage
+
+qarray.sh your_script.sh
+
 **Requirements (that I know of...)**
 
 A script corresponding to the qarray_template.sh format.
