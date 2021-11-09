@@ -37,9 +37,6 @@ should hopefully be generated
 
 **Probable issues/caveats/etc.**
 
-*Your JOB_NUM section should only print out an integer that's your number
-of tasks, nothing else.
-
 *None of the variables etc. from the JOB_NUM section will be transferred to 
 the ARRAY_BIT section. If you need that stuff you'll have to re-run it down
 there. 
