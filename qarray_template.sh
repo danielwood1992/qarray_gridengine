@@ -4,6 +4,7 @@
 
 my_file="/path/to/my/file";
 ARRAY_NUM=$(cat $my_file | wc -l);
+ARRAY_NUM="$ARRAY_NUM some_argument some_other_argument";
 
 echo $ARRAY_NUM;
 

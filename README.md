@@ -25,8 +25,9 @@ qarray.sh your_script.sh
 A script corresponding to the qarray_template.sh format.
 
 This will have:
-1. A section starting with the line ##JOB_NUM##. This section needs to end with 'echo $ARRAY_NUM';
-You can script whatever process you want to generate this array.
+1. A section starting with the line ##JOB_NUM##. This section needs to end with 'echo $ARRAY_NUM'. The $ARRAY_NUM variable can either just be the number of tasks; OR the number of tasks, and
+then arguments to pass to each array jobs (separated by spaces);
+You can script whatever processes you want to generate these things.
 2. A second section starting with '##ARRAY_BIT##'. This you should write and should behave exactly as a normal array job...except where you'd normally have a line '#$ -t 1-10' or whatever, you
 need to put '#$ -t ?'. This will get replaced with 1-$ARRAY_NUM from the
 first bit of your script. 
@@ -46,8 +47,5 @@ there.
 *Probably worth checking the submission script the first time you run this
 (it's $script2 from below, you'll need to comment out the rm $script2 line)
  in case something's gone horribly wrong.
-
-*At the moment this script won't allow you to specify arguments for your job
-e.g. 'qsub my_script.sh some_param'. Such is life.
 
 *If you're generating multiple scripts per nanosecond the temporry script names might end up being a problem, I guess?
