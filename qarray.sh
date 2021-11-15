@@ -3,6 +3,7 @@
 
 #Usage qarray.sh my_script.sh
 file=$1;
+filename=${file##*/};
 
 #####
 #1 Check my_script.sh conforms to requirements (see qarray_template.sh for example)
@@ -41,7 +42,7 @@ fi;
 #temp script 1 (calculating array num)
 #Generates a date (in nanoseconds) to use as temporary file...
 dt1=`date '+%d_%N'`;
-script1="my_script_$dt1.sh";
+script1="$filename.my_script_$dt1.sh";
 
 #So this starts at ##JOBNUM### and prints every line til ##ARRAY_BIT##
 awk '/\#\#JOB_NUM\#\#/{flag=1;next}/\#\#ARRAY_BIT\#\#/{flag=0}flag' $file > $script1;
@@ -81,7 +82,7 @@ rm $script1;
 #########
 
 dt2=`date '+%d_%N'`;
-script2="my_script_$dt2.sh";
+script2="$filename.my_script_$dt2.sh";
 
 #Gets from the ##ARRAY_BIT## section to the end of the script..
 awk '/\#\#ARRAY_BIT\#\#/{flag=1;next}/alongandhopefullyunmatchedpattern/{flag=0}flag' $file > $script2;
