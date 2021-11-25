@@ -18,12 +18,13 @@ the number by hand, this might be the script for you.
 
 **Usage**
 
-qarray.sh your_script.sh
-slurmarray.sh your_script.sh
+qarray.sh your_script.sh (gridengine)
+
+slurmarray.sh your_script.sh (slurm)
 
 **Requirements (that I know of...)**
 
-A script corresponding to the qarray_template.sh format.
+A script corresponding to the qarray_template.sh (gridengine) or slurmarray_template.sh (slurm) format.
 
 This will have:
 1. A section starting with the line ##JOB_NUM##. This section needs to end with 'echo $ARRAY_NUM'. The $ARRAY_NUM variable can either just be the number of tasks; OR the number of tasks, and
