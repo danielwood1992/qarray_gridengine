@@ -30,8 +30,8 @@ This will have:
 1. A section starting with the line ##JOB_NUM##. This section needs to end with 'echo $ARRAY_NUM'. The $ARRAY_NUM variable can either just be the number of tasks; OR the number of tasks, and
 then arguments to pass to each array jobs (separated by spaces);
 You can script whatever processes you want to generate these things.
-2. A second section starting with '##ARRAY_BIT##'. This you should write and should behave exactly as a normal array job...except where you'd normally have a line '#$ -t 1-10' (gridengine) or 'SBATCH --array=1-10' or whatever, you
-need to put '#$ -t ?' (gridengine) or 'SBATCH --array=?'. This will get replaced with 1-$ARRAY_NUM from the
+2. A second section starting with '##ARRAY_BIT##'. This you should write and should behave exactly as a normal array job...except where you'd normally have a line '#$ -t 1-10' (gridengine) or 'SBATCH --array=1-10' (slurm) or whatever, you
+need to put '#$ -t ?' (gridengine) or 'SBATCH --array=?' (slurm). This will get replaced with 1-$ARRAY_NUM from the
 first bit of your script. 
 
 If your script doesn't correspond to these requirements, an error message
