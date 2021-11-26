@@ -20,7 +20,7 @@ echo $ARRAY_NUM;
 
 file_list=$1;
 arg=$2;
-INPUT_FILE=$(sed -n "${SLURM_ARRAY_TASKID}p" $file_list);
+INPUT_FILE=$(sed -n "${SLURM_ARRAY_TASK_ID}p" $file_list);
 echo ${SLURM_ARRAY_TASK_ID};
 echo $INPUT_FILE;
 echo $arg;
